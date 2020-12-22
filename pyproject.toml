@@ -19,6 +19,16 @@ pytest-django = "^4.1"
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "project.settings"
 
+[tool.coverage.run]
+branch = true
+source = ["project"]
+omit = ["*/migrations/*", "*/admin.py"]
+
+[tool.coverage.report]
+skip_covered = true
+show_missing = true
+fail_under = 100
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
