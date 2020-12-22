@@ -23,7 +23,7 @@ DJANGO_SETTINGS_MODULE = "project.settings"
 
 [tool.coverage.run]
 branch = true
-source = ["project"]
+source = ["project", "users"]
 omit = ["*/migrations/*", "*/admin.py"]
 
 [tool.coverage.report]
