@@ -1,10 +1,8 @@
 from pathlib import Path
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-SECRET_KEY = "CHANGE-ME!"
-DEBUG = True
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = PROJECT_DIR.parent
 
 ALLOWED_HOSTS = []
 
@@ -33,7 +31,7 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [str(PROJECT_DIR / "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -46,14 +44,8 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = "project.asgi.application"
 WSGI_APPLICATION = "project.wsgi.application"
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 
 AUTH_USER_MODEL = "users.User"
 AUTH_PASSWORD_VALIDATORS = [
@@ -73,8 +65,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-gb"
 TIME_ZONE = "Europe/London"
+
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
+STATIC_ROOT = str(BASE_DIR / "static")
+
+MEDIA_ROOT = str(BASE_DIR / "media")
+MEDIA_URL = "/media/"
+
+SITE_ID = 1
