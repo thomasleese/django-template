@@ -6,6 +6,7 @@ authors = ["Author <author@example.com>"]
 
 [tool.poetry.dependencies]
 django = "^3.1"
+dj-database-url = "^0.5"
 psycopg2-binary = "^2.8"
 python = "^3.9"
 
