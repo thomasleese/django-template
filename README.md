@@ -7,7 +7,7 @@ Description.
 ### Install Python
 
 ```sh
-$ pyenv install 3.9.0
+$ pyenv install 3.9.1
 ```
 
 ### Install dependencies
